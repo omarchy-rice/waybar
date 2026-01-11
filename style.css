@@ -1,37 +1,62 @@
 @import "../omarchy/current/theme/waybar.css";
 
 * {
-  background-color: @background;
-  color: @foreground;
-
+  background-color: transparent;
   border: none;
   border-radius: 0;
   min-height: 0;
-  font-family: 'JetBrainsMono Nerd Font Mono';
+  font-family: "JetBrainsMono Nerd Font Mono";
   font-size: 13px;
 }
 
+window#waybar {
+  background: transparent;
+  color: @foreground;
+  padding: 0px;
+  margin: 0px;
+}
+
 .modules-left {
-  margin-left: 8px;
+  margin-left: 5px;
 }
 
 .modules-right {
-  margin-right: 8px;
+  margin-right: 12px;
+  background: @background;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+#workspaces {
+  background: @background;
+  border-radius: 10px;
+  margin-left: 10px;
+  padding: 5px 10px;
 }
 
 #workspaces button {
-  all: initial;
-  padding: 0 6px;
+  padding: 1px 8px;
   margin: 0 1.5px;
   min-width: 9px;
+  font-weight: bold;
+  color: @foreground;
 }
 
-#workspaces button.empty {
-  opacity: 0.5;
+#workspaces button:hover {
+  background: none;
+  box-shadow: none;
+  text-shadow: none;
+  border: none;
+  transition: none;
+}
+
+#workspaces button.active {
+  background-color: @foreground;
+  color: @background;
+  border-radius: 6px;
 }
 
 #cpu,
-#battery,
 #pulseaudio,
 #custom-omarchy,
 #custom-screenrecording-indicator,
@@ -57,6 +82,8 @@
 }
 
 tooltip {
+  background: @background;
+  border-radius: 10px;
   padding: 2px;
 }
 
@@ -66,9 +93,18 @@ tooltip {
 
 #clock {
   margin-left: 8.75px;
+  background: @background;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-weight: bold;
 }
 
-#mpris {}
+#mpris {
+  font-weight: 800;
+  background: @background;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
 
 .hidden {
   opacity: 0;
