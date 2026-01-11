@@ -4,52 +4,38 @@
   "position": "top",
   "spacing": 0,
   "height": 26,
-  "modules-left": ["custom/omarchy", "hyprland/workspaces"],
-  "modules-center": ["mpris", "custom/update", "custom/screenrecording-indicator"],
+  "margin-top": 10,
+  "margin-bottom": 0,
+  "modules-left": ["clock", "hyprland/workspaces"],
+  "modules-center": [
+    "mpris",
+    "custom/update",
+    "custom/screenrecording-indicator"
+  ],
   "modules-right": [
     "group/tray-expander",
     "bluetooth",
     "network",
-    "pulseaudio",
-    "clock" 
+    "pulseaudio"
   ],
   "mpris": {
-  "format": "{player_icon} {title}",
-  "format-paused": "󰏤 {title}",
-  "player-icons": {
-    "spotify": "",
-    "firefox": "",
-    "chromium": "",
-    "vlc": "",
-    "default": ""
-  },
-  "max-length": 40,
-  "tooltip": false
+    "format": "{player_icon} {title}",
+    "format-paused": "󰏤 {title}",
+    "player-icons": {
+      "spotify": "",
+      "firefox": "",
+      "chromium": "",
+      "vlc": "",
+      "default": ""
+    },
+    "max-length": 40,
+    "tooltip": false
   },
   "hyprland/workspaces": {
     "on-click": "activate",
-    "format": "{icon}",
-    "format-icons": {
-      "default": "",
-      "1": "1",
-      "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7",
-      "8": "8",
-      "9": "9",
-      "10": "0",
-      "active": ""
-    },
-    "persistent-workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": []
-    }
+    "format": "{name}",
+    "sort-by-number": true,
+    "persistent-workspaces": {}
   },
   "custom/omarchy": {
     "format": "<span font='omarchy'>\ue900</span>",
@@ -66,9 +52,10 @@
     "interval": 21600
   },
   "clock": {
-    "format": "{:%I:%M %p}",
-    "format-alt": "{:L%d %B %Y}",
-    "tooltip": false,
+    "format": "{:%I:%M}",
+    "tooltip-format": "{:L%d %B %Y}",
+    "format-alt": "{:%I:%M %p %d %B %Y}",
+    "tooltip": false
   },
   "network": {
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
@@ -82,14 +69,14 @@
     "interval": 3,
     "spacing": 1,
     "on-click": "omarchy-launch-wifi"
-  }, 
+  },
   "bluetooth": {
     "format": "",
     "format-disabled": "󰂲",
     "format-connected": "",
     "format-no-controller": "",
     "tooltip-format": "Devices connected: {num_connections}",
-    "on-click": "omarchy-launch-bluetooth",
+    "on-click": "omarchy-launch-bluetooth"
   },
   "pulseaudio": {
     "format": "{icon}",
